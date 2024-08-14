@@ -1,8 +1,9 @@
 # HRSampleData
-HR Sample Data for Analysis
+HR Sample Data for Analysis on Wage Disparity in Gender
  
 A sample HR dataset with 500 entries, which includes information on gender, age, department, position, years of experience, education level, and annual salary. 
-This dataset introduces some wage disparity between men and women
+ 
+ This dataset introduces some wage disparity between men and women
 
 > Save script to Notepad ++ 
      Save as file name: HRSampleData.py

@@ -1,0 +1,44 @@
+import pandas as pd
+import numpy as np
+
+# Set the random seed for reproducibility
+np.random.seed(42)
+
+# Number of samples
+n_samples = 500
+
+# Generate sample data
+data = {
+    "EmployeeID": range(1, n_samples + 1),
+    "Gender": np.random.choice(["Male", "Female"], n_samples),
+    "Age": np.random.randint(22, 60, n_samples),
+    "Department": np.random.choice(
+        ["HR", "Engineering", "Marketing", "Sales", "Finance"], n_samples
+    ),
+    "Position": np.random.choice(
+        ["Junior", "Mid", "Senior", "Lead", "Manager"], n_samples
+    ),
+    "YearsExperience": np.random.randint(1, 40, n_samples),
+    "Education": np.random.choice(
+        ["High School", "Associate Degree", "Bachelor's", "Master's", "PhD"],
+        n_samples,
+    ),
+    "AnnualSalary": np.round(
+        np.random.normal(loc=70000, scale=15000, size=n_samples), 2
+    ),
+}
+
+# Convert to DataFrame
+df = pd.DataFrame(data)
+
+# Introduce some wage disparity for the analysis
+df.loc[df["Gender"] == "Female", "AnnualSalary"] *= np.random.uniform(0.8, 0.95)
+
+# Ensure no negative salaries
+df["AnnualSalary"] = df["AnnualSalary"].apply(lambda x: max(x, 20000))
+
+# Display the first few rows of the dataset
+print(df.head())
+
+# Save the DataFrame to a CSV file
+df.to_csv("HR_Dataset_for_Wage_Disparity_Analysis.csv", index=False)

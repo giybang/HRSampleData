@@ -5,9 +5,9 @@ A sample HR dataset with 500 entries, which includes information on gender, age,
 This dataset introduces some wage disparity between men and women
 
 > Save script to Notepad ++ 
-    Save as file name: HRSampleData.py
-    File Type: all files
+     Save as file name: HRSampleData.py
+     File Type: all files
 
 > Run script
-   python.exe .\HRSampleData.py
+    python.exe .\HRSampleData.py
 
